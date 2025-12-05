@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from flatpages import views  # Добавьте этот импорт
+from flatpages import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
