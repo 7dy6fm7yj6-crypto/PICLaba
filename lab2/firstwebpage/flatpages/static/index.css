@@ -1,0 +1,40 @@
+body {
+    background: #1abc9c; 
+    font-family: Tahoma, Arial, sans-serif; 
+    color: #333;
+    margin: 20px;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;  /* Шрифт с засечками */
+}
+
+h4 {
+    font-size: 16px;  /* Измененный шрифт размер */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;  /* Ширина 100% экрана */
+    border: 2px solid black;
+}
+
+p, h4 {
+    font-size: 20px; 
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin: 0;
+}
+
+table tr td, table tr th {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+img {
+    height: 30px;
+    width: auto;
+    margin: 10px 0;
+}

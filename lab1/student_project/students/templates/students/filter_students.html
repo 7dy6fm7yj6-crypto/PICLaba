@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Фильтр студентов</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .form-group { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Фильтрация студентов по среднему баллу</h1>
+    
+    <form method="get">
+        <div class="form-group">
+            <label for="threshold">Пороговый средний балл:</label>
+            <input type="number" step="0.1" name="threshold" id="threshold" 
+                   value="{{ threshold }}" required>
+            <button type="submit">Фильтровать</button>
+        </div>
+    </form>
+
+    {% if students %}
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Экзамены</th>
+                <th>Оценки</th>
+                <th>Средний балл</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.exams }}</td>
+                <td>{{ student.marks }}</td>
+                <td>{{ student.get_average_mark|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Нет студентов, удовлетворяющих условию</p>
+    {% endif %}
+</body>
+</html>
